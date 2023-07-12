@@ -3,21 +3,21 @@ package config
 import "os"
 
 type Sor struct {
-	name  string
-	file  string
-	query string
+	bucketName string
+	file       string
+	query      string
 }
 
 func NewSor() *Sor {
 	return &Sor{
-		name:  os.Getenv("SOR_NAME"),
-		file:  os.Getenv("SOR_FILE"),
-		query: os.Getenv("SOR_QUERY"),
+		bucketName: os.Getenv("SOR_NAME"),
+		file:       os.Getenv("SOR_FILE"),
+		query:      os.Getenv("SOR_QUERY"),
 	}
 }
 
-func (s Sor) Name() string {
-	return s.name
+func (s Sor) BucketName() string {
+	return s.bucketName
 }
 
 func (s Sor) File() string {
